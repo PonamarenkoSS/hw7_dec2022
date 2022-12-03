@@ -44,51 +44,51 @@
 // i = 5; j = 2 -> такого числа в массиве нет
 // i = 1; j = 1 -> 9
 
-// int rows = new Random().Next(0,11);
-// int columns = new Random().Next(0,11);
+int rows = new Random().Next(0,11);
+int columns = new Random().Next(0,11);
 
-// int[,] array = GetArray(rows, columns, 0, 10);
-// PrintArray(array);
-// Console.WriteLine();
+int[,] array = GetArray(rows, columns, 0, 10);
+PrintArray(array);
+Console.WriteLine();
 
-// Console.WriteLine("Введите номер строки для вывода элемента: ");
-// int checkRow = int.Parse(Console.ReadLine()!);
-// Console.WriteLine("Введите номер столбца для вывода элемента: ");
-// int checkColumn = int.Parse(Console.ReadLine()!);
-// Console.WriteLine();
+Console.WriteLine("Введите номер строки для вывода элемента: ");
+int checkRow = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите номер столбца для вывода элемента: ");
+int checkColumn = int.Parse(Console.ReadLine()!);
+Console.WriteLine();
 
-// Check(checkRow, checkColumn, array);
+Check(checkRow, checkColumn, array);
 
-// int[,] GetArray(int m, int n, int minValue, int maxValue){
-//     int[,] result = new int[m,n];
-//     for(int i = 0; i < m; i++){
-//         for(int j = 0; j < n; j++){
-//             result[i,j] = new Random().Next(minValue, maxValue + 1);
-//         }
-//     }
-//     return result;
-// }
+int[,] GetArray(int m, int n, int minValue, int maxValue){
+    int[,] result = new int[m,n];
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            result[i,j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return result;
+}
 
-// void PrintArray(int[,] array){
-//     for(int i = 0; i < array.GetLength(0); i++){
-//         for(int j = 0; j < array.GetLength(1); j++){
-//             Console.Write($"{array[i,j]} ");
-//         }
-//         Console.WriteLine();
-//     }
-// }
+void PrintArray(int[,] array){
+    for(int i = 0; i < array.GetLength(0); i++){
+        for(int j = 0; j < array.GetLength(1); j++){
+            Console.Write($"{array[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+}
 
-// void Check(int m, int n, int[,] array)
-// {
-//     if (m <= array.GetLength(0) && n <= array.GetLength(1))
-//     {
-//         Console.WriteLine($"Элемент массива с заданными индексами строки и столбца - {array[m,n]}");
-//     }
-//     else 
-//     {
-//         Console.WriteLine($"Такого элемента в массиве нет");
-//     }
-// }
+void Check(int m, int n, int[,] array)
+{
+    if (m < array.GetLength(0) && n < array.GetLength(1))
+    {
+        Console.WriteLine($"Элемент массива с заданными индексами строки и столбца - {array[m,n]}");
+    }
+    else 
+    {
+        Console.WriteLine($"Такого элемента в массиве нет");
+    }
+}
 
 // Задача 52. Задайте двумерный массив из целых чисел. 
 // Найдите среднее арифметическое элементов в каждом столбце.
